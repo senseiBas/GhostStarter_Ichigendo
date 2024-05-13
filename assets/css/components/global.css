@@ -121,7 +121,7 @@ ul:not([class]) li + li {
 }
 
 a:not([class]) {
-    color: var(--color-primary);
+    font-size: Medium;
     text-decoration-skip-ink: auto;
 }
 

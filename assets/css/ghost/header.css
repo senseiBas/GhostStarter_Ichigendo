@@ -49,7 +49,7 @@
 /* Primary Navigation
 /* ---------------------------------------------------------- */
 
-.gh-head-menu {
+/* .gh-head-menu {
     display: flex;
     align-items: center;
 }
@@ -73,7 +73,7 @@
 
 .gh-head-menu .nav-current a {
     box-shadow: 0 -1px 0 0 currentcolor inset;
-}
+} */
 
 
 /* Secondary Navigation

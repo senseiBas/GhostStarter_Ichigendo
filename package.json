@@ -80,6 +80,18 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "custom": {
+            "header_title":{
+                "type": "text",
+                "group":"homepage",
+                "description": "Title for the header. If empty it will use the site title"
+            },
+            "header_description":{
+                "type": "text",
+                "group":"homepage",
+                "description": "secondary text for the header. If empty it will use the dite description"
+            }
         }
     },
     "type": "module"
