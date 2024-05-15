@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="{{@site.locale}}">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{meta_title}}</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta_title}}</title>
+
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}" />
+    <script src="{{asset "built/index.js"}}" defer></script>
+
+    {{ghost_head}}
+    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+
     </head>
     <body class="{{body_class}}">
-        {{body}}
+        <div>
+            <p>Hello</p>
+            {{{body}}}
+        </div>
+        {{ghost_foot}}
+        {{!-- Outputs important meta data and settings, should always be at the end of the <body> --}}
     </body>
-
 </html>

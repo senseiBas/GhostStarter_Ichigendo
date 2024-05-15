@@ -1,2 +1,8 @@
 {{!< default}}
-<p>Hello</p>
+<main id="#main">
+    <div>
+        {{!-- Loop through posts 1 to 5 --}}
+        {{#foreach posts from="1" to="5"}}
+       <p>hello</p>
+        {{/foreach}}
+</main>
