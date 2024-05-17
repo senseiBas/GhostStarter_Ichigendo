@@ -9,7 +9,7 @@ function buildStyles() {
 
 // here we watch an array of files
 function watchTask() {
-  watch(['assets/css/**/*.scss'], buildStyles);
+  return watch(['assets/css/**/*.scss'], buildStyles);
 }
 
 exports.default = series(

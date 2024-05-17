@@ -8,7 +8,7 @@
   },
   "author": {
     "name": "Sensei Bas",
-    "email":"bas@ichigendo.nl"
+    "email": "bas@ichigendo.nl"
   },
   "license": "ISC",
   "keywords": [
@@ -44,5 +44,8 @@
     },
     "card_assets": true,
     "custom": {}
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
   }
 }
