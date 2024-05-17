@@ -7,9 +7,13 @@
 // colors & typography
 
 
-// components (buttons, cards, forms, navs, etc)
 
+// components (buttons, cards, forms, navs, etc)
+@import 'components/header';
+@import 'components/cards';
 
 // utilities (margin, padding, text-align, etc)
 
-@import 'node_modules/bootstrap/scss/bootstrap'
+// Bootstrap import and overrides
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'bootstrap_overrides';

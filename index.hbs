@@ -1,17 +1,106 @@
 {{!< default}}
 
-<main id="#main">
+    {{!-- todo
+    - make animation on hover
+    - Set paralax to custom img
+    - Set header text to custom texts
+    - waar, wanneer en offer, voor wie + Links naar Landing
+    - Navbar!
+
+
+
+    - fix posts
+    - Fix pages
+    --}}
+
+<main id="main">
     {{!-- hero section --}}
-    <div class="container-lg">
-        <p>hello</p>
-    </div>
+    <section id="header" class="d-flex align-items-start align-items-md-center">
+        <picture>
+            <source media="(max-width: 300px)" srcset="{{img_url @site.cover_image size='s'}}">
+            <source media="(max-width: 600px)" srcset="{{img_url @site.cover_image size='m'}}">
+            <source media="(max-width: 1000px)" srcset="{{img_url @site.cover_image size='l'}}">
+            <img src="{{img_url @site.cover_image size='xl'}}" alt="{{@site.title}}" class="img-fluid">
+        </picture>
 
+        <div class="header-text container-xl">
+            <div class="row justify-content-start">
+                <div class="col-md-5 text-center text-md-start mb-5">
+                    <h1 class="display-1">{{@site.title}}</h1>
+                    <h2 class="text-muted">{{@site.description}}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    {{!-- Feature section 1 --}}
+    {{!-- Features 1 --}}
+    <section id="features-1">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h1 class="ghost-color">OVER ONS</h4>
+                    <h2 class="my-3">Wij zijn Ichigendo</h2>
+                    <p class="text-body-emphasis">Ichigendo is de enige school in zijn soort. <br>
+                        In onze Dojo beoefenen we een moderne versie van Ninjutsu.<br>
+                        Hier wordt oude krijgskunst-wijsheid gecombineerd met moderne inzichten.</p>
+            </div>
+
+            <div class="row">
+                {{#get "posts" limit="all" filter="featured:true"}}
+                    {{#foreach posts}}
+                    {{>"cards"}}
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </section>
+
 
     {{!-- Paralax 1 --}}
+    <section id="parallax1">
+        <div class="container-wide">
+            <style>
+                #parallax1{
+                    padding: -60px 0;
+                }
+
+                .parallax {
+                    /* The image used */
+                    background-image: url({{img_url @site.cover_image size='xl'}});
+
+                    /* Set a specific height */
+                    min-height: 500px;
+
+                    /* Create the parallax scrolling effect */
+                    background-attachment: fixed;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            </style>
+            <!-- Container element -->
+            <div class="parallax"></div>
+        </div>
+    </section>
 
     {{!-- waar, wanneer en offer, voor wie --}}
+
+        <section id="features-1">
+        <div class="container-xl">
+            <div class="text-center mb-5">
+                <h1 class="ghost-color">TESTERDE TEST</h4>
+                    <h2 class="my-3">Wij zijn Ichigendo</h2>
+                    <p class="text-body-emphasis">Ichigendo is de enige school in zijn soort. <br>
+                        In onze Dojo beoefenen we een moderne versie van Ninjutsu.<br>
+                        Hier wordt oude krijgskunst-wijsheid gecombineerd met moderne inzichten.</p>
+            </div>
+
+            <div class="row">
+                {{#foreach posts}}
+                {{>"cards"}}
+                {{/foreach}}
+            </div>
+        </div>
+    </section>
 
     {{!-- Andere kijk op maertial arts --}}
 
@@ -22,5 +111,6 @@
     {{!-- Blog --}}
 
     {{!-- Footer --}}
+    {{!-- Make this in default --}}
 
 </main>

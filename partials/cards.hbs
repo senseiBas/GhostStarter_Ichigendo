@@ -1,0 +1,23 @@
+<div class="col-md-4">
+    <a href="{{url}}" style="text-decoration: none;">
+         <div class="card border-0 mb-5">
+            <img class="card-img-top" src="{{img_url feature_image size=" l"}}" alt="{{feature_image_alt}}" />
+            <div class="card-body">
+                {{#if featured}}
+                <span>{{> "icons/fire"}} Featured</span>
+                {{/if}}
+                <h5 class="card-title">{{title}}</h5>
+                <div class="text-muted">
+                    <p class="card-text fw-lighter">{{excerpt}}</p>
+                    <footer>
+                        {{#if reading_time}}
+                        {{reading_time}} -
+                        {{/if}}
+                        <time datetime="{{date format=" DD-MM-YYYY"}}">{{date}}</time>
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+    </a>
+</div>
