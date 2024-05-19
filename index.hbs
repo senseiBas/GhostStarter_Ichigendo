@@ -1,19 +1,5 @@
-{{!< default}}
-
-    {{!-- todo
-    - make animation on hover
-    - Set paralax to custom img
-    - Set header text to custom texts
-    - waar, wanneer en offer, voor wie + Links naar Landing
-    - Navbar!
-
-
-
-    - fix posts
-    - Fix pages
-    --}}
-
-<main id="main">
+{{!< default}} {{!-- todo - make animation on hover - Set paralax to custom img - Set header text to custom texts - -
+    fix posts -Fix pages --}} <main id="main">
     {{!-- hero section --}}
     <section id="header" class="d-flex align-items-start align-items-md-center">
         <picture>
@@ -35,6 +21,101 @@
 
     {{!-- Features 1 --}}
     <section id="features-1">
+        <div class="container-xl mb-5">
+            <div class="text-center mb-5">
+                <h1 class="ghost-color">OVER ONS</h4>
+                    <h2 class="my-3">Wij zijn Ichigendo</h2>
+                    <p class="text-body-emphasis">Ichigendo is de enige school in zijn soort. <br>
+                        In onze Dojo beoefenen we een moderne versie van Ninjutsu.<br>
+                        Hier wordt oude krijgskunst-wijsheid gecombineerd met moderne inzichten.</p>
+            </div>
+
+            <div class="row">
+                {{#get "posts" limit="all" filter="featured:true"}}
+                {{#foreach posts}}
+                {{>"cards"}}
+                {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </section>
+
+
+    {{!-- Paralax 1 --}}
+
+    <div class="container-wide">
+        <style>
+            #parallax1 {
+                padding: -60px 0;
+            }
+
+            .parallax {
+                /* The image used */
+                background-image: url({{img_url @site.cover_image size='xl'}});
+
+                /* Set a specific height */
+                min-height: 500px;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+        <!-- Container element -->
+        <div class="parallax"></div>
+    </div>
+    </section>
+
+    {{!-- Offer + waar, wanneer --}}
+
+    {{!-- offer cards - lestijden.. - maps image on mobile --}}
+
+    <section id="practical">
+        <div class="container my-2">
+            <div id="offer">
+                <h1>ons aanbod</h1>
+
+                card 1 2 and 3
+            </div>
+
+            <div class="mt-5">
+                {{>tabs}}
+            </div>
+        </div>
+    </section>
+
+    {{!-- Paralax 2 --}}
+    <section id="parallax2">
+        <style>
+            #parallax1 {
+                padding: -60px 0;
+            }
+
+            .parallax {
+                /* The image used */
+                background-image: url({{img_url @site.cover_image size='xl'}});
+
+                /* Set a specific height */
+                min-height: 500px;
+
+                /* Create the parallax scrolling effect */
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+        <!-- Container element -->
+        <div class="parallax"></div>
+        </div>
+
+    </section>
+
+    {{!-- Andere kijk op maertial arts & Veel gestelde vragen en meedoe knop daarnaast --}}
+
+    <section id="features-1">
         <div class="container-xl">
             <div class="text-center mb-5">
                 <h1 class="ghost-color">OVER ONS</h4>
@@ -46,71 +127,17 @@
 
             <div class="row">
                 {{#get "posts" limit="all" filter="featured:true"}}
-                    {{#foreach posts}}
-                    {{>"cards"}}
-                    {{/foreach}}
+                {{#foreach posts}}
+                {{>"cards"}}
+                {{/foreach}}
                 {{/get}}
             </div>
         </div>
     </section>
-
-
-    {{!-- Paralax 1 --}}
-    <section id="parallax1">
-        <div class="container-wide">
-            <style>
-                #parallax1{
-                    padding: -60px 0;
-                }
-
-                .parallax {
-                    /* The image used */
-                    background-image: url({{img_url @site.cover_image size='xl'}});
-
-                    /* Set a specific height */
-                    min-height: 500px;
-
-                    /* Create the parallax scrolling effect */
-                    background-attachment: fixed;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-            </style>
-            <!-- Container element -->
-            <div class="parallax"></div>
-        </div>
-    </section>
-
-    {{!-- waar, wanneer en offer, voor wie --}}
-
-        <section id="features-1">
-        <div class="container-xl">
-            <div class="text-center mb-5">
-                <h1 class="ghost-color">TESTERDE TEST</h4>
-                    <h2 class="my-3">Wij zijn Ichigendo</h2>
-                    <p class="text-body-emphasis">Ichigendo is de enige school in zijn soort. <br>
-                        In onze Dojo beoefenen we een moderne versie van Ninjutsu.<br>
-                        Hier wordt oude krijgskunst-wijsheid gecombineerd met moderne inzichten.</p>
-            </div>
-
-            <div class="row">
-                {{#foreach posts}}
-                {{>"cards"}}
-                {{/foreach}}
-            </div>
-        </div>
-    </section>
-
-    {{!-- Andere kijk op maertial arts --}}
-
-    {{!-- Paralax 2 --}}
-
-    {{!-- Veel gestelde vragen en meedoe knop daarnaast --}}
 
     {{!-- Blog --}}
 
     {{!-- Footer --}}
     {{!-- Make this in default --}}
 
-</main>
+    </main>

@@ -1,15 +1,24 @@
 #header {
     position: relative;
     width: 100%;
-    height: 75vh; /* Adjust this as needed for your design */
+    height: 85vh; /* Adjust this as needed for your design */
+    // margin-top: -90px;
+    z-index: -1; /* Sends the image behind any other header content */
     
     picture, img {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 75vh; /* Keep this the same as the header vh */
+        height: 85vh; /* Keep this the same as the header vh */
         object-fit: cover; /* Ensures the image covers the entire header */
         z-index: -1; /* Sends the image behind any other header content */
     }
 }
+
+// Sets the header image behind a transparent header on bootrstap breakpoints
+@media (min-width: 768px) {
+    #header {
+      margin-top: -90px;
+    }
+  }

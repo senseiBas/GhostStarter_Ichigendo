@@ -10,16 +10,25 @@
     <script src="{{asset "built/index.js"}}" defer></script>
 
     {{ghost_head}}
-    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+    {{!-- Outputs important meta data and settings, should always be in
 
-    </head>
-    <body class="{{body_class}}">
-        <div>
-            {{{body}}}
-        </div>
-        {{!-- Bootstrap JS --}}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        {{!-- Ghost footer code injection: Outputs important meta data and settings, should always be at the end of the<body> --}}
+    <head> --}}
+
+</head>
+
+<body class="{{body_class}}">
+    {{!-- Navbar from navigation.hbs --}}
+    {{navigation}}
+
+    <div>
+        {{{body}}}
+    </div>
+    {{!-- Bootstrap JS --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {{!-- Ghost footer code injection: Outputs important meta data and settings, should always be at the end of the
+
+    <body> --}}
         {{ghost_foot}}
     </body>
+
 </html>
