@@ -41,15 +41,15 @@ section {
     margin-top: -90px;
   }
 }
-.card img {
-  width: 100%;
-  max-height: 500px;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-}
-
-.ghost-color {
-  color: var(--ghost-accent-color);
+.parallax {
+  /* Set a specific height */
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: -60px;
 }
 
 /*!
@@ -302,6 +302,11 @@ p {
   margin-bottom: 1rem;
 }
 
+
+strong {
+  font-weight: bolder;
+}
+
 a {
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
   text-decoration: underline;
@@ -416,6 +421,11 @@ iframe {
   border: 0;
 }
 
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
@@ -424,6 +434,17 @@ iframe {
 @media (min-width: 1200px) {
   .display-1 {
     font-size: 5rem;
+  }
+}
+
+.display-5 {
+  font-size: calc(1.425rem + 2.1vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+@media (min-width: 1200px) {
+  .display-5 {
+    font-size: 3rem;
   }
 }
 
@@ -495,6 +516,19 @@ iframe {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
 }
+
+.col-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+}
+
+.g-0 {
+  --bs-gutter-x: 0;
+}
+
+.g-0 {
+  --bs-gutter-y: 0;
+}
 @media (min-width: 768px) {
   .col-md-4 {
     flex: 0 0 auto;
@@ -503,6 +537,18 @@ iframe {
   .col-md-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  .col-xl-3 {
+    flex: 0 0 auto;
+    width: 25%;
   }
 }
 
@@ -852,8 +898,25 @@ iframe {
   color: var(--bs-card-title-color);
 }
 
+.card-subtitle {
+  margin-top: calc(-0.5 * var(--bs-card-title-spacer-y));
+  margin-bottom: 0;
+  color: var(--bs-card-subtitle-color);
+}
+
 .card-text:last-child {
   margin-bottom: 0;
+}
+
+.card-header {
+  padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+  margin-bottom: 0;
+  color: var(--bs-card-cap-color);
+  background-color: var(--bs-card-cap-bg);
+  border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
+}
+.card-header:first-child {
+  border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
 }
 
 
@@ -917,6 +980,10 @@ iframe {
   }
 }
 
+.d-block {
+  display: block !important;
+}
+
 .d-flex {
   display: flex !important;
 }
@@ -929,6 +996,10 @@ iframe {
   border: 0 !important;
 }
 
+.border-2 {
+  border-width: 2px !important;
+}
+
 .justify-content-start {
   justify-content: flex-start !important;
 }
@@ -937,8 +1008,21 @@ iframe {
   justify-content: flex-end !important;
 }
 
+.justify-content-center {
+  justify-content: center !important;
+}
+
 .align-items-start {
   align-items: flex-start !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.mx-5 {
+  margin-right: 3rem !important;
+  margin-left: 3rem !important;
 }
 
 .my-2 {
@@ -949,6 +1033,16 @@ iframe {
 .my-3 {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important;
+}
+
+.my-4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .mt-5 {
@@ -980,6 +1074,21 @@ iframe {
 
 /* rtl:end:remove */
 
+.text-secondary {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-light {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-dark {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
 .text-muted {
   --bs-text-opacity: 1;
   color: var(--bs-secondary-color) !important;
@@ -988,6 +1097,16 @@ iframe {
 .text-body-emphasis {
   --bs-text-opacity: 1;
   color: var(--bs-emphasis-color) !important;
+}
+
+.bg-secondary {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 @media (min-width: 768px) {
   .align-items-md-center {
@@ -1008,4 +1127,8 @@ iframe {
 .nav-tabs .nav-link.active {
   background-color: var(--ghost-accent-color);
   color: #fff;
+}
+
+.ghost-color {
+  color: var(--ghost-accent-color);
 }

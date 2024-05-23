@@ -1,5 +1,17 @@
-{{!< default}} {{!-- todo - make animation on hover - Set paralax to custom img - Set header text to custom texts - -
-    fix posts -Fix pages --}} <main id="main">
+{{!< default}} 
+{{!
+
+- Set paralax to custom img 
+- Set header text to custom texts
+ - - fix posts
+- {{!-- Blog --}}
+
+    {{!-- Footer --}}
+    {{!-- Make this in default --}}
+ 
+ --}}
+
+<main id="main">
     {{!-- hero section --}}
     <section id="header" class="d-flex align-items-start align-items-md-center">
         <picture>
@@ -42,75 +54,33 @@
 
 
     {{!-- Paralax 1 --}}
-
+    <section id="parallax_1">
     <div class="container-wide">
-        <style>
-            #parallax1 {
-                padding: -60px 0;
-            }
-
-            .parallax {
-                /* The image used */
-                background-image: url({{img_url @site.cover_image size='xl'}});
-
-                /* Set a specific height */
-                min-height: 500px;
-
-                /* Create the parallax scrolling effect */
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        </style>
         <!-- Container element -->
-        <div class="parallax"></div>
+        <div class="parallax" style="background-image: url({{img_url @site.cover_image size='xl'}});"></div>
     </div>
     </section>
-
-    {{!-- Offer + waar, wanneer --}}
 
     {{!-- offer cards - lestijden.. - maps image on mobile --}}
 
     <section id="practical">
         <div class="container my-2">
-            <div id="offer">
-                <h1>ons aanbod</h1>
-
-                card 1 2 and 3
-            </div>
-
-            <div class="mt-5">
-                {{>tabs}}
+            <div class="text-center mb-5">
+                <h1 class="ghost-color">Meedoen Met Ichigendo</h4>
+                    <div id="offer">
+                        {{>offer}}
+                    </div>
+                    <div class="mt-5">
+                        {{>tabs}}
+                    </div>
             </div>
         </div>
     </section>
 
     {{!-- Paralax 2 --}}
-    <section id="parallax2">
-        <style>
-            #parallax1 {
-                padding: -60px 0;
-            }
-
-            .parallax {
-                /* The image used */
-                background-image: url({{img_url @site.cover_image size='xl'}});
-
-                /* Set a specific height */
-                min-height: 500px;
-
-                /* Create the parallax scrolling effect */
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        </style>
+    <section id="parallax_2">
         <!-- Container element -->
-        <div class="parallax"></div>
-        </div>
-
+        <div class="parallax" style="background-image: url({{img_url @site.cover_image size='xl'}});"></div>
     </section>
 
     {{!-- Andere kijk op maertial arts & Veel gestelde vragen en meedoe knop daarnaast --}}
@@ -140,4 +110,4 @@
     {{!-- Footer --}}
     {{!-- Make this in default --}}
 
-    </main>
+</main>
