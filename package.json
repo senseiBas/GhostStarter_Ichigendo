@@ -18,7 +18,9 @@
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-purgecss": "^6.0.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
     "sass": "^1.77.1"
   },
   "config": {
@@ -44,10 +46,27 @@
       }
     },
     "card_assets": true,
-    "custom": {}
-  },
-  "dependencies": {
-    "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3"
+    "custom": {
+      "nav_header_text": {
+        "type": "text",
+        "group": "homepage"
+      },
+      "nav_support_text": {
+        "type": "text",
+        "group": "homepage"
+      },
+      "parallax_image_1": {
+        "type": "image",
+        "group": "homepage"
+      },
+      "parallax_image_2": {
+        "type": "image",
+        "group": "homepage"
+      }
+    },
+    "dependencies": {
+      "bootstrap": "^5.3.3",
+      "bootstrap-icons": "^1.11.3"
+    }
   }
 }

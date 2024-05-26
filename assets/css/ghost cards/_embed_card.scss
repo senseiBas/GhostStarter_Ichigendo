@@ -1,0 +1,23 @@
+/* purgecss start ignore */
+.fluid-width-video-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.fluid-width-video-wrapper iframe,
+.fluid-width-video-wrapper object,
+.fluid-width-video-wrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-embed-card iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+}
+
+/* purgecss end ignore */

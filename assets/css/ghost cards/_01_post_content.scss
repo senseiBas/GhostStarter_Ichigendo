@@ -1,0 +1,51 @@
+// Make sure this file isnt purged
+/* purgecss start ignore */
+
+// here we need to style all the elements that are inside the post content. 
+// https://ghost.org/docs/themes/content/
+
+
+
+
+// Todo: 
+
+// Audio Upload
+// File Upload
+// Header Card Fix H1 tm 4!...
+
+
+// 1 section post-content & Basic Card Layout
+.post-content {
+    background-color: rgb(44, 71, 70);
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.kg-card {
+    width: 100%;
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    overflow: hidden;
+    /* We can fix this later */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Make sure this file isnt purged
+/* purgecss end ignore */

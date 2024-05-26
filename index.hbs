@@ -1,15 +1,8 @@
 {{!< default}} 
-{{!
-
-- Set paralax to custom img 
-- Set header text to custom texts
- - - fix posts
-- {{!-- Blog --}}
-
-    {{!-- Footer --}}
-    {{!-- Make this in default --}}
- 
- --}}
+{{!-- Post layout --}} 
+{{!-- Blog Page --}} 
+{{!-- Footer: Make this in default --}} 
+{{!-- Custom sign in form --}}
 
 <main id="main">
     {{!-- hero section --}}
@@ -24,8 +17,16 @@
         <div class="header-text container-xl">
             <div class="row justify-content-start">
                 <div class="col-md-5 text-center text-md-start mb-5">
+                    {{#if @custom.nav_header_text}}
+                    <h1 class="display-1">{{@custom.nav_header_text}}</h1>
+                    {{else}}
                     <h1 class="display-1">{{@site.title}}</h1>
+                    {{/if}}
+                    {{#if @custom.nav_support_text}}
+                    <h2 class="text-muted">{{@custom.nav_support_text}}</h2>
+                    {{else}}
                     <h2 class="text-muted">{{@site.description}}</h2>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -55,10 +56,14 @@
 
     {{!-- Paralax 1 --}}
     <section id="parallax_1">
-    <div class="container-wide">
-        <!-- Container element -->
-        <div class="parallax" style="background-image: url({{img_url @site.cover_image size='xl'}});"></div>
-    </div>
+        <div class="container-wide">
+            <!-- Container element -->
+            {{#if @custom.parallax_image_1}}
+            <div class="parallax" style="background-image: url({{@custom.parallax_image_1}});"></div>
+            {{else}}
+            <h1>Please set a parallax_1 Image in settings!!</h1>
+            {{/if}}
+        </div>
     </section>
 
     {{!-- offer cards - lestijden.. - maps image on mobile --}}
@@ -79,24 +84,32 @@
 
     {{!-- Paralax 2 --}}
     <section id="parallax_2">
-        <!-- Container element -->
-        <div class="parallax" style="background-image: url({{img_url @site.cover_image size='xl'}});"></div>
+        <div class="container-wide">
+            <!-- Container element -->
+            {{#if @custom.parallax_image_2}}
+            <div class="parallax" style="background-image: url({{@custom.parallax_image_2}});"></div>
+            {{else}}
+            <h1>Please set a parallax_2 Image in settings!!</h1>
+            {{/if}}
+        </div>
     </section>
 
     {{!-- Andere kijk op maertial arts & Veel gestelde vragen en meedoe knop daarnaast --}}
+    <section id="faq">
+        {{>faq}}
+    </section>
 
-    <section id="features-1">
-        <div class="container-xl">
+
+    {{!-- Blog: read more make partial for re-use --}}
+<section id="read_more">
+        <div class="container-xl mb-5">
             <div class="text-center mb-5">
-                <h1 class="ghost-color">OVER ONS</h4>
-                    <h2 class="my-3">Wij zijn Ichigendo</h2>
-                    <p class="text-body-emphasis">Ichigendo is de enige school in zijn soort. <br>
-                        In onze Dojo beoefenen we een moderne versie van Ninjutsu.<br>
-                        Hier wordt oude krijgskunst-wijsheid gecombineerd met moderne inzichten.</p>
+                <h1 class="ghost-color">Blog</h4>
+                <h2 class="my-3">Lees meer...</h2>
+                <p>Wil je meer lezen over Ichigendo of Ninjutsu,<br> kijk dan even hier, of ga direct naar onze <a href="#/blog" class="lead" style="color: var(--ghost-accent-color);">blog</a></p>
             </div>
-
             <div class="row">
-                {{#get "posts" limit="all" filter="featured:true"}}
+                {{#get "posts" limit="all" filter="featured:false" order="published_at desc"}}
                 {{#foreach posts}}
                 {{>"cards"}}
                 {{/foreach}}
@@ -105,9 +118,7 @@
         </div>
     </section>
 
-    {{!-- Blog --}}
-
     {{!-- Footer --}}
-    {{!-- Make this in default --}}
+    {{!-- Make this in default hbs --}}
 
 </main>

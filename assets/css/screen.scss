@@ -7,11 +7,25 @@
 // colors & typography
 
 
+// Ghost Cards css
+@import 'ghost cards/01_post_content';
+@import 'ghost cards/image_cards';
+@import 'ghost cards/gallery_cards';
+@import 'ghost cards/bookmark_card';
+@import 'ghost cards/signup_card';
+@import 'ghost cards/button_card';
+@import 'ghost cards/callout_card';
+@import 'ghost cards/toggle_card';
+@import 'ghost cards/video_card';
+@import 'ghost cards/product_card';
+@import 'ghost cards/embed_card';
 
 // components (buttons, cards, forms, navs, etc)
 @import 'components/header';
-@import 'components/cards';
+@import 'components/post_header';
 @import 'components/parallax';
+
+
 
 // utilities (margin, padding, text-align, etc)
 

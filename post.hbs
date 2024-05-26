@@ -1,5 +1,53 @@
-{{!< default}}
-{{!-- Hier goed voorbeeld nemen aan casper! --}}
-<section>
-        {{content}}
-</section>
+{{!< default}} 
+{{#post}}
+<main class="or-post container {{post_class}}">
+  <article id="article">
+    <header class="pt-4">
+        {{!-- Header and meta --}}
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-8 my-2">
+              {{#if featured}}
+              <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+              {{/if}}
+            </div>
+            <div class="col-8  my-2">
+              <h1 class="article-title">{{title}}</h1>
+            </div>
+            <div class="col-8">
+              <p class="lead text-muted">{{excerpt}}</p>
+              {{#if reading_time}}
+              <p>{{reading_time}} | date: <time datetime="{{date format=" DD-MM-YYYY"}}">{{date}}</time> {{#match
+                primary_tag}}| categorie: <a href="{{primary_tag.url}}"
+                  style="--color: {{primary_tag.accent_color}}"><strong>{{primary_tag.name}}</strong></a>{{/match}}</p>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+
+        {{!-- Image display --}}
+        <figure class="post-figure">
+          <img srcset="
+            {{img_url feature_image size='xxs'}} 30w,
+            {{img_url feature_image size='xs'}} 100w,
+            {{img_url feature_image size='s'}} 300w,
+            {{img_url feature_image size='m'}} 600w,
+            {{img_url feature_image size='l'}} 1000w,
+            {{img_url feature_image size='xl'}} 2000w" sizes="(min-width: 1400px) 1400px, 92vw"
+            src="{{img_url feature_image size='xl'}}" class="post-image"
+            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+          {{#if feature_image_caption}}
+          <figcaption class="lead text-muted">{{feature_image_caption}}</figcaption>
+          {{/if}}
+        </figure>
+    </header>
+
+    {{!-- content --}}
+
+    <section class="post-content">
+      {{content}}
+    </section>
+
+  </article>
+</main>
+{{/post}}

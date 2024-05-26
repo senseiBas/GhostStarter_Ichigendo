@@ -1,0 +1,31 @@
+/* purgecss start ignore */
+
+// 4.1 Image Cards
+.kg-image-card {
+    border-radius: 20px;
+}
+
+// since the parent containers vary widley in css, these methods are used to make the image cards responsive and stick into place
+.kg-width-wide {
+    width: 85vw;
+    position: relative;
+    min-width: 100%;
+    margin: auto calc(50% - 50vw);
+    transform: translateX(calc(50vw - 50%));
+}
+
+.kg-width-full {
+    position: relative;
+    width: 100vw;
+    margin: auto calc(50% - 50vw);
+    transform: translateX(calc(50vw - 50%));
+}
+
+.kg-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+// Make sure this file isnt purged
+/* purgecss end ignore */
