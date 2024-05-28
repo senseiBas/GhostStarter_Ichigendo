@@ -19,6 +19,9 @@
 @import 'ghost cards/video_card';
 @import 'ghost cards/product_card';
 @import 'ghost cards/embed_card';
+@import 'ghost cards/header_card';
+@import 'ghost cards/audio_card';
+@import 'ghost cards/file_card';
 
 // components (buttons, cards, forms, navs, etc)
 @import 'components/header';
@@ -31,4 +34,4 @@
 
 // Bootstrap import and overrides
 @import 'node_modules/bootstrap/scss/bootstrap';
-@import 'bootstrap_overrides';
+@import 'base/bootstrap_overrides';
