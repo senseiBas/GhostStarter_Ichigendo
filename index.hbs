@@ -32,17 +32,16 @@
         <div class="container-xl mb-5">
             <div class="text-center mb-5">
                 <h1 class="ghost-color">OVER ONS</h4>
-                    <h2 class="my-3">Wij zijn Ichigendo</h2>
-                    <p class="text-body-emphasis">Ichigendo is de enige school in zijn soort. <br>
-                        In onze Dojo beoefenen we een moderne versie van Ninjutsu.<br>
-                        Hier wordt oude krijgskunst-wijsheid gecombineerd met moderne inzichten.</p>
+                <h2 class="my-3">Wij zijn Ichigendo</h2>
+                <p class="text-body-emphasis">Ichigendo is de enige school in zijn soort. <br>
+                    In onze Dojo beoefenen we een moderne versie van Ninjutsu.<br>
+                    Hier wordt oude krijgskunst-wijsheid gecombineerd met moderne inzichten.</p>
             </div>
 
-            <div class="row">
-                {{#get "posts" limit="all" filter="featured:true"}}
-                {{#foreach posts}}
-                {{>"cards"}}
-                {{/foreach}}
+            <div>
+                {{#get "posts" limit="all"}}
+                {{!-- {{#get "posts" limit="all" filter="featured:true"}} --}}
+                {{>"cardsgrid"}}
                 {{/get}}
             </div>
         </div>
@@ -89,31 +88,20 @@
         </div>
     </section>
 
-    {{!-- Andere kijk op maertial arts & Veel gestelde vragen en meedoe knop daarnaast --}}
-    <section id="faq">
-        {{>faq}}
-    </section>
-
 
     {{!-- Blog: read more make partial for re-use --}}
-<section id="read_more">
+    <section id="read_more">
         <div class="container-xl mb-5">
             <div class="text-center mb-5">
                 <h1 class="ghost-color">Blog</h4>
                 <h2 class="my-3">Lees meer...</h2>
                 <p>Wil je meer lezen over Ichigendo of Ninjutsu,<br> kijk dan even hier, of ga direct naar onze <a href="#/blog" class="lead" style="color: var(--ghost-accent-color);">blog</a></p>
             </div>
-            <div class="row">
-                {{#get "posts" limit="all" filter="featured:false" order="published_at desc"}}
-                {{#foreach posts}}
-                {{>"cards"}}
-                {{/foreach}}
-                {{/get}}
+            <div>
+            {{#get "posts" limit="6" filter="featured:false"}}
+                {{>"cardsgrid"}}
+            {{/get}}
             </div>
         </div>
     </section>
-
-    {{!-- Footer --}}
-    {{!-- Make this in default hbs --}}
-
 </main>

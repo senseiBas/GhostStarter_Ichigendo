@@ -1,0 +1,88 @@
+<style>
+    .p-posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Define a post grid, where cards can be minimum 300px and maximum the size of the column */
+        gap: 4vmin;
+    }
+
+    .p-post-card img {
+        width: 100%;
+        max-height: 500px;
+        aspect-ratio: 16 / 9;
+        /* All images will have an HD image ratio */
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* https://ghost.org/tutorials/custom-homepage/ */
+</style>
+
+<div class="p-posts-grid">
+    {{! Use the foreach helper to loop through available posts }}
+    {{#foreach posts}}
+    <article class="p-post-card">
+        <a href="{{url}}" style="text-decoration: none;">
+            {{! Use the img_url helper to bring in the post's feature image. }}
+            <img
+                srcset="
+                {{img_url feature_image size="xxs"}} 30w,
+                {{img_url feature_image size="xs"}} 100w,
+                {{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1000w,
+                {{img_url feature_image size="xl"}} 2000w"
+                sizes="l"
+                src="{{img_url feature_image size="l"}}"
+                class=""
+                alt="{{feature_image_alt}}"
+            />
+            <div>
+                <h5 class="text-white mt-3">
+
+                    {{#if featured}}
+                    <span>{{> "icons/fire"}}</span>
+                    {{/if}}
+                    {{title}}
+                </h5>
+                <div class="text-muted">
+                    <p class="card-text fw-lighter">{{excerpt}}</p>
+                    <footer>
+                        {{#if reading_time}}
+                        {{reading_time}} -
+                        {{/if}}
+                        <time datetime="{{date format=" DD-MM-YYYY"}}">{{date}}</time>
+                    </footer>
+                </div>
+            </div>
+        </a>
+    </article>
+    {{/foreach}}
+</div>
+
+
+{{!-- /* ADD THIS INSTEAD OF THE POST GRID!!! */
+
+<div class="col-md-4">
+    <a href="{{url}}" style="text-decoration: none;">
+        <div>
+            {{/if}}
+            <div>
+                {{#if featured}}
+                <span>{{> "icons/fire"}} Featured</span>
+                {{/if}}
+                <h5 class="card-title">{{title}}</h5>
+                <div class="text-muted">
+                    <p class="card-text fw-lighter">{{excerpt}}</p>
+                    <footer>
+                        {{#if reading_time}}
+                        {{reading_time}} -
+                        {{/if}}
+                        <time datetime="{{date format=" DD-MM-YYYY"}}">{{date}}</time>
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+    </a>
+</div> --}}
