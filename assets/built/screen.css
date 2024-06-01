@@ -2581,10 +2581,6 @@ iframe {
   --bs-gutter-y: 0;
 }
 @media (min-width: 768px) {
-  .col-md-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-  }
   .col-md-5 {
     flex: 0 0 auto;
     width: 41.66666667%;
@@ -3049,6 +3045,10 @@ iframe {
   display: flex !important;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .border {
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
 }
@@ -3188,6 +3188,9 @@ iframe {
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 @media (min-width: 768px) {
+  .d-md-block {
+    display: block !important;
+  }
   .align-items-md-center {
     align-items: center !important;
   }

@@ -59,30 +59,3 @@
     </article>
     {{/foreach}}
 </div>
-
-
-{{!-- /* ADD THIS INSTEAD OF THE POST GRID!!! */
-
-<div class="col-md-4">
-    <a href="{{url}}" style="text-decoration: none;">
-        <div>
-            {{/if}}
-            <div>
-                {{#if featured}}
-                <span>{{> "icons/fire"}} Featured</span>
-                {{/if}}
-                <h5 class="card-title">{{title}}</h5>
-                <div class="text-muted">
-                    <p class="card-text fw-lighter">{{excerpt}}</p>
-                    <footer>
-                        {{#if reading_time}}
-                        {{reading_time}} -
-                        {{/if}}
-                        <time datetime="{{date format=" DD-MM-YYYY"}}">{{date}}</time>
-                    </footer>
-                </div>
-
-            </div>
-        </div>
-    </a>
-</div> --}}
