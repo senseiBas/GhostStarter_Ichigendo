@@ -3,3 +3,12 @@
 section{
   padding-top: 60px;
 }
+
+// Truncates over 2 lines instead of 1
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
