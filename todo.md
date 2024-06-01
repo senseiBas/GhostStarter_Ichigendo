@@ -1,7 +1,3 @@
-<!-- PAGES------------- -->
-fix pages (headers uit enzo)
-fix tag pages: als ze er zijn is t nu even goed
-
 GO LIVE!!
 
 <!-- POSTS & NAVBAR-->
