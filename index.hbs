@@ -39,7 +39,7 @@
             </div>
 
             <div>
-                {{#get "posts" limit="all"}}
+                 {{#get "posts" limit="3" filter="featured:true"}}
                 {{!-- {{#get "posts" limit="all" filter="featured:true"}} --}}
                 {{>"cardsgrid"}}
                 {{/get}}
@@ -98,7 +98,7 @@
                 <p>Wil je meer lezen over Ichigendo of Ninjutsu,<br> kijk dan even hier, of ga direct naar onze <a href="#/blog" class="lead" style="color: var(--ghost-accent-color);">blog</a></p>
             </div>
             <div>
-            {{#get "posts" limit="6" filter="featured:false"}}
+            {{#get "posts" limit="3" filter="featured:false"}}
                 {{>"cardsgrid"}}
             {{/get}}
             </div>

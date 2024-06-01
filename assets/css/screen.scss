@@ -3,12 +3,12 @@
 
 // base & layout
 @import 'base/ghost';
+@import 'base/_post_content';
 
 // colors & typography
 
 
 // Ghost Cards css: not the cards you use on the index!
-@import 'ghost cards/01_post_content';
 @import 'ghost cards/image_cards';
 @import 'ghost cards/gallery_cards';
 @import 'ghost cards/bookmark_card';
@@ -25,7 +25,7 @@
 
 // components (buttons, cards, forms, navs, etc)
 @import 'components/header';
-@import 'components/post_header';
+@import 'base/post_header';
 @import 'components/parallax';
 
 

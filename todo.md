@@ -1,25 +1,16 @@
-Publish to main and validate in prod!!
+<!-- PAGES------------- -->
+fix pages (headers uit enzo)
+fix tag pages: als ze er zijn is t nu even goed
 
-<!-- Programming in the posts & pages -->
-<!-- POST TODO's------------- -->
-header card splitview
-remove green background
-check typography on a real post
-read more sections
+GO LIVE!!
+
+<!-- POSTS & NAVBAR-->
+fix member settings & add custom cta to pages & posts if not logged in
+fix search in main nav
+fix big letters in navbar
+
+fix faq section: if faq tag
 fix comment sections
 
-<!-- Should do's global -->
-fix footer in index + partial
-fix search
-
-<!-- POSTS & PAGES -->
-<!-- ------------- -->
-fix pages (headers uit enzo)
-fix tag pages
-kijk of carrds ook werken in pages (bijv grid in over ichigendo)
-
-<!-- HOME SCREEN -->
-<!-- ------------- -->
-fix read more
-fix member settings
-fix faq section: if faq tag
+<!-- Over ons template -->
+Teachers below content

@@ -1,0 +1,46 @@
+{{!< default}} 
+{{#post}} 
+{{!-- Everything inside the #post block pulls data from the page --}} 
+
+<main class="or-post container {{post_class}}">
+    <article>
+        {{#match @page.show_title_and_feature_image}}
+        <header class="pt-4">
+            {{!-- Header and meta --}}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-8 my-2">
+                        {{#if featured}}
+                        <span class="post-card-featured">{{> "icons/fire"}} Featured</span>
+                        {{/if}}
+                    </div>
+                    <div class="col-8  my-2">
+                        <h1 class="article-title">{{title}}</h1>
+                    </div>
+
+                    {{#if feature_image}}
+                    <figure class="article-image">
+                        {{!-- This is a responsive image, it loads different sizes depending on device
+                        https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433
+                        --}}
+                        <img srcset="{{img_url feature_image size=" s"}} 300w, {{img_url feature_image size="m" }} 600w,
+                            {{img_url feature_image size="l" }} 1000w, {{img_url feature_image size="xl" }} 2000w"
+                            sizes="(min-width: 1400px) 1400px, 92vw" src="{{img_url feature_image size=" xl"}}"
+                            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+                        {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                        {{/if}}
+                    </figure>
+                    {{/if}}
+
+        </header>
+        {{/match}}
+
+        <section class="post-content pb-5">
+            {{content}}
+        </section>
+
+    </article>
+</main>
+
+{{/post}}

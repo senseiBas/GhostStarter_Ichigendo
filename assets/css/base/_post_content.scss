@@ -4,13 +4,6 @@
 // here we need to style all the elements that are inside the post content. 
 // https://ghost.org/docs/themes/content/
 
-// 1 section post-content & Basic Card Layout
-.post-content {
-    background-color: rgb(44, 71, 70);
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
 .kg-card {
     width: 100%;
     display: flex;
@@ -22,6 +15,17 @@
     overflow: hidden;
     /* We can fix this later */
 }
+
+
+// BODY
+
+.post-content {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+
 
 
 
