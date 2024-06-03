@@ -1,23 +1,36 @@
 <nav class="navbar navbar-expand-md" style="background-color: rgba(0, 0, 0, 0.4)">
     <div class="container-xxl">
-        {{!-- <a class="navbar-brand" href="/">{{@site.title}} <img src={{@site.logo}} width="auto" height="30" alt={{@site.title}}></a> --}}
         {{!-- Footer navbar --}}
         {{#if isSecondary}}
-            <div class="navbar-nav secondary-nav py-5 me-auto">
-                <a class="navbar-brand" href="/">{{@site.title}} <img src={{@site.logo}} width="auto" height="30" alt={{@site.title}}></a>
-                {{#foreach navigation}}
-                <a class="nav-item nav-link {{#if current}}active{{/if}}" href="{{url absolute=" true"}}">{{label}}</a>
-                {{/foreach}}
-                <a class="nav-item nav-link" href="whatsapp://send?phone=+31623485023"><span>{{>"icons/whatsapp"}}</span></a>
+        <div class="navbar-nav secondary-nav py-5 me-auto">
+            <a class="navbar-brand" href="/">{{@site.title}} <img src={{@site.logo}} width="auto" height="30"
+                    alt={{@site.title}}></a>
+            {{#foreach navigation}}
+            <a class="nav-item nav-link {{#if current}}active{{/if}}" href="{{url absolute=" true"}}">{{label}}</a>
+            {{/foreach}}
+            <a class="nav-item nav-link" href="mailto:info@ichigendo.nl"><span>{{>"icons/email"}}</span></a>
+            <a class="nav-item nav-link" href="#"
+                onclick="window.open('https://www.facebook.com/ichigendo', '_blank'); return false;">
+                <span>{{>"icons/fb"}}</span> <!-- You can use an icon or text for this -->
+            </a>
+
+            {{!-- MOBILE --}}
+            <div class="d-md-none"> <!-- Hide on medium devices and larger -->
+                <a class="nav-item nav-link"
+                    href="whatsapp://send?phone=+31623485023"><span>{{>"icons/whatsapp"}}</span></a>
+                <a class="nav-item nav-link" href="tel:+31623485023"><span>{{>"icons/phone"}}</span></a>
             </div>
+        </div>
         {{else}}
         {{!-- Header navbar --}}
         {{!-- toggle btn mobile nav --}}
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle Navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+            aria-controls="main-nav" aria-expanded="false" aria-label="Toggle Navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         {{!-- nav links --}}
-        <a class="navbar-brand" href="/">{{@site.title}} <img src={{@site.logo}} width="auto" height="30" alt={{@site.title}}></a>
+        <a class="navbar-brand" href="/">{{@site.title}} <img src={{@site.logo}} width="auto" height="30"
+                alt={{@site.title}}></a>
         <div class="collapse navbar-collapse justify-content-end align-center py-3" id="main-nav">
             <div class="navbar-nav ms-auto">
                 {{#foreach navigation}}

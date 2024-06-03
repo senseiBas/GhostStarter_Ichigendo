@@ -3224,6 +3224,9 @@ iframe {
   .d-md-block {
     display: block !important;
   }
+  .d-md-none {
+    display: none !important;
+  }
   .align-items-md-center {
     align-items: center !important;
   }

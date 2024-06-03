@@ -1,6 +1,3 @@
-
-
-Add  Icons for whataspp, FB twitter and email to footer (Line 2 and outline right mind you! (zit in gebakken in ghost))
 Set offer to transformation (teksten zelf kunnen maken, en cards op goede hoogte zetten (aanpassen aan grootste text)
 
 <!-- Members-->
