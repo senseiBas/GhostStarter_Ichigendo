@@ -1,31 +1,31 @@
 {{!< default}} 
 <main id="main">
     {{!-- hero section --}}
-    <section id="header" class="d-flex align-items-start align-items-md-center">
-        <picture>
-            <source media="(max-width: 300px)" srcset="{{img_url @site.cover_image size='s'}}">
-            <source media="(max-width: 600px)" srcset="{{img_url @site.cover_image size='m'}}">
-            <source media="(max-width: 1000px)" srcset="{{img_url @site.cover_image size='l'}}">
-            <img src="{{img_url @site.cover_image size='xl'}}" alt="{{@site.title}}" class="img-fluid">
-        </picture>
-
-        <div class="header-text container-xl">
-            <div class="row justify-content-start">
-                <div class="col-md-5 text-center text-md-start mb-5">
-                    {{#if @custom.nav_header_text}}
-                    <h1 class="display-1">{{@custom.nav_header_text}}</h1>
-                    {{else}}
-                    <h1 class="display-1">{{@site.title}}</h1>
-                    {{/if}}
-                    {{#if @custom.nav_support_text}}
-                    <h2 class="text-muted">{{@custom.nav_support_text}}</h2>
-                    {{else}}
-                    <h2 class="text-muted">{{@site.description}}</h2>
-                    {{/if}}
-                </div>
+<section id="header" class="d-flex flex-column align-items-start align-items-md-center">
+    <div class="header-text container-xl">
+        <div class="row justify-content-start">
+            <div class="col-md-5 text-center text-md-start my-5">
+                {{#if @custom.nav_header_text}}
+                <h1 class="display-1">{{@custom.nav_header_text}}</h1>
+                {{else}}
+                <h1 class="display-1">{{@site.title}}</h1>
+                {{/if}}
+                {{#if @custom.nav_support_text}}
+                <h2 class="text-muted">{{@custom.nav_support_text}}</h2>
+                {{else}}
+                <h2 class="text-muted">{{@site.description}}</h2>
+                {{/if}}
             </div>
         </div>
-    </section>
+    </div>
+    
+    <picture>
+        <source media="(max-width: 300px)" srcset="{{img_url @site.cover_image size='s'}}">
+        <source media="(max-width: 600px)" srcset="{{img_url @site.cover_image size='m'}}">
+        <source media="(max-width: 1000px)" srcset="{{img_url @site.cover_image size='l'}}">
+        <img src="{{img_url @site.cover_image size='xl'}}" alt="{{@site.title}}" class="img-fluid">
+    </picture>
+</section>
 
     {{!-- Features 1 --}}
     <section id="features-1">

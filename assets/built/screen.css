@@ -2023,6 +2023,7 @@ section {
   height: 85vh; /* Adjust this as needed for your design */
   z-index: -1; /* Sends the image behind any other header content */
 }
+
 #header picture, #header img {
   position: absolute;
   top: 0;
@@ -2036,6 +2037,18 @@ section {
 @media (min-width: 768px) {
   #header {
     margin-top: -90px;
+  }
+}
+@media (max-width: 767.98px) {
+  #header {
+    height: auto; /* Allows the header to adjust height based on content */
+    padding-top: 20px; /* Add some padding if needed */
+  }
+  #header picture, #header img {
+    position: relative;
+    height: auto; /* Adjusts image height to auto */
+    object-fit: contain; /* Ensures the image is fully visible */
+    margin-top: 20px; /* Adds space between text and image */
   }
 }
 .article {
@@ -3065,6 +3078,10 @@ iframe {
   border-width: 2px !important;
 }
 
+.flex-column {
+  flex-direction: column !important;
+}
+
 .justify-content-start {
   justify-content: flex-start !important;
 }
@@ -3118,8 +3135,16 @@ iframe {
   margin-top: 3rem !important;
 }
 
+.me-auto {
+  margin-right: auto !important;
+}
+
 .mb-5 {
   margin-bottom: 3rem !important;
+}
+
+.ms-auto {
+  margin-left: auto !important;
 }
 
 .p-3 {
