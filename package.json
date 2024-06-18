@@ -55,6 +55,11 @@
         "type": "text",
         "group": "homepage"
       },
+      "over_ons_text": {
+        "type": "text",
+        "group": "homepage",
+        "description": "Text for the 'Over ons' section on the homepage"
+      },
       "parallax_image_1": {
         "type": "image",
         "group": "homepage"

@@ -1,68 +1,201 @@
-<div class="text-center">
-    <h2>Wat past bij jou?</h2>
-    <p class="lead text-muted">We hebben op dit moment 3 opties om mee te doen.<br> In de toekomst komt er een 4e optie
-        bij: <strong>"online+"</strong><br> Ideaal als je liever op je eigen tempo en locatie leert.<br> Bekijk hier
-        welke optie het beste bij jou past.</p>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
 
-    <div class="row my-5 align-items-center justify-content-center g-0">
+    .card {
+        position: relative;
+        /* Ensure the card is the reference point for the carrot button */
+        background-color: #f8f9fa;
+        color: rgb(31, 30, 30);
+        border: 1px solid #e9ecef;
+        user-select: none;
+        border-radius: 1.5rem;
+        padding-left: 1rem;
+        box-shadow: 4px 4px 20px 20px rgba(235, 232, 232, 0.2);
+    }
 
-        {{!-- FLOATING MEMBER CARD --}}
-        <div class="col-8 col-lg-4 col-xl-3 my-3">
-            <div class="card bg-light text-dark">
-                <div class="card-body text-center-py-4">
-                    <h4 class="card-title">Floating Member</h5>
-                        <p class="lead card-subtitle">Aangesloten bij de dojo</p>
-                        <p class="display-5 my-4" style="color: var(--ghost-accent-color);">Gratis</p>
-                        <p class="card-text mx-5 text-secondary d-block">
-                           Je bent via de nieuwsbrief en de website op de hoogte van alle coole dingen!<br><br>
-                        <div class="d-none d-md-block">
-                            Toegang tot de gratis online lesstof
-                        </div>
-                        </p>
-                        <a href="#/portal" class="btn" style="background-color: var(--ghost-accent-color);">Ik schrijf me in</a>
-                </div>
+    .main-card {
+        border: 2px solid var(--ghost-accent-color);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    /* Some special css for the button */
+    .pill {
+        border-radius: 50px;
+        padding: 0.5rem 1rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    .pill:hover {
+        text-decoration: none;
+        color: white;
+        filter: brightness(1.2);
+    }
+
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .card-content {
+            display: none;
+        }
+
+        .card.active .card-content {
+            display: block;
+        }
+
+        .carrot-button {
+            display: block;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .carrot-button {
+            display: none;
+        }
+    }
+
+    .carrot-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        color: rgb(31, 30, 30);
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition: transform 0.3s;
+        transform: rotate(90deg);
+    }
+
+    .card.active .carrot-button {
+        transform: rotate(0deg);
+        /* Rotates the carrot button when card is active */
+    }
+
+    .checklist {
+        list-style-type: none;
+        /* Remove default bullets */
+        padding: 0;
+        /* Remove default padding */
+    }
+
+    .checklist li {
+        position: relative;
+        padding-left: 1.5em;
+        /* Space for the checkmark */
+        margin: 10px 0;
+        /* Adjust the top and bottom margin */
+    }
+
+    .checklist li::before {
+        content: '✔';
+        /* Unicode for checkmark */
+        position: absolute;
+        left: 0;
+        color: var(--ghost-accent-color);
+        /* Color of the checkmark */
+        font-size: 1em;
+        /* Adjust the size of the checkmark */
+        line-height: 1;
+        /* Adjust the line height if needed */
+    }
+</style>
+
+
+<div class="container my-5">
+    <div class="text-center py-1 my-2">
+        <h1 class="ghost-color py-2">Meedoen Met Ichigendo</h4>
+            <h2></h2> Wat past bij jou?</h2>
+            <p>Bekijk hieronder de verschillende opties en kies welke optie het beste bij jou past.
+            </p>
+    </div>
+    <div class="grid">
+        {{!-- Card 1 --}}
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <h1 class="display-6 mt-2">Floating Member</h1>
+                <h2 class="card-title py-2" style="color: var(--ghost-accent-color);">Gratis</h2>
+                <a href="#/portal" class="btn mt-2 pill" style="background-color: var(--ghost-accent-color);">Ik wil het
+                    proberen</a>
+                <button class="carrot-button">V</button> <!-- Carrot button -->
+            </div>
+            <div class="card-content">
+                <p class="card-text mb-4">Vriend van de Dojo! <br> Ook hier is veel te halen </p>
+                <ul class="checklist">
+                    <li>Toegang tot alle artikelen op de website</li>
+                    <li>Welkom bij de buiten trainingen</li>
+                    <li>Nieuwe Artikelen meteen in je mailbox</li>
+                </ul>
             </div>
         </div>
-
-        {{!-- Main membership card --}}
-        <div class="col-8 col-lg-4 col-xl-3 my-3">
-            <div class="card bg-light text-dark border-2" style="border-color: var(--ghost-accent-color);">
-                <div class="card-header bg-secondary text-center text-light">meest populair</div>
-                <div class="card-body text-center-py-5">
-                    <h4 class="card-title">Ichigendo Student</h5>
-                        <p class="lead card-subtitle">Hier begint de reis pas echt</p>
-                        <p class="display-5 my-4" style="color: var(--ghost-accent-color);">Volwassen Les</p>
-                        <p class="card-text mx-5 text-secondary d-block">
-                            Toegang tot de lessen in de dojo.<br><br>
-                            Toegang tot de lesstof die we in de Dojo behandelen<br><br>
-                        <div class="d-none d-md-block">
-                            Alles binnen "floating member"<br><br>
-                            <strong>inclusief</strong> toegang tot Online+ wanneer het uitkomt!
-                        </div>
-                        </p>
-                        <a href="https://ichigendo.plugandpay.nl/checkout/ichigendo-checkout" class="btn"
-                            style="background-color: var(--ghost-accent-color);">Vertel me meer!</a>
-                </div>
+        {{!-- Card 2 MAIN --}}
+        <div class="card main-card active" onclick="toggleCard(this)">
+            <div class="card-header">
+                <h1 class="display-6 mt-2">Student</h1>
+                <h2 class="card-title py-2" style="color: var(--ghost-accent-color);"><b> € 37,50</b>/mnd</h2>
+                <a href="https://ichigendo.plugandpay.nl/checkout/ichigendo-checkout" class="btn mt-2 pill"
+                    style="background-color: var(--ghost-accent-color);">Ik wil het proberen</a>
+                <button class="carrot-button">V</button> <!-- Carrot button -->
+            </div>
+            <div class="card-content">
+                <p class="card-text mb-4">Probeer de eerste twee weken voor maar €15,- Je zit nergens aan vast!</p>
+                <ul class="checklist">
+                    <li>Toegang tot de lessen in de dojo</li>
+                    <li>Toegang tot het online lesplatform</li>
+                    <li>Mogelijkheid om thuis te trainen</li>
+                    <li>Toegang tot de mind en meditatie lessen op het platform</li>
+                    <li>Toegang tot extra materiaal dat NIET op de website komt</li>
+                    <li>Natuurlijk ook alles van het gratis lidmaatschap!</li>
+                </ul>
             </div>
         </div>
-
-        {{!-- Kids Lessen --}}
-        <div class="col-8 col-lg-4 col-xl-3 my-3">
-            <div class="card bg-light text-dark">
-                <div class="card-body text-center-py-4">
-                    <h4 class="card-title">Little Ninja</h5>
-                        <p class="lead card-subtitle">Jong geleerd...</p>
-                        <p class="display-5 my-4" style="color: var(--ghost-accent-color);">Kids Les</p>
-                        <p class="card-text mx-5 text-secondary d-block">
-                            Een les speciaal aangepast op kinderen<br>
-                        <div class="d-none d-md-block">
-                            Spelenderwijs kennismaken met Martial arts<br><br>
-                            Gericht op de ontwikkeling van het kind zelf
-                        </div>
-                        </p>
-                        <a href="https://ichigendo.plugandpay.nl/checkout/ichigendo-checkout-1710591773" class="btn"
-                            style="background-color: var(--ghost-accent-color);">Vertel me meer</a>
-                </div>
+        {{!-- Card 3 --}}
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <h1 class="display-6 mt-2">Kids Lessen</h1>
+                <h2 class="card-title py-2" style="color: var(--ghost-accent-color);"><b> € 27,50</b>/mnd</h2>
+                <a href="https://ichigendo.plugandpay.nl/checkout/ichigendo-checkout-1710591773" class="btn mt-2 pill"
+                    style="background-color: var(--ghost-accent-color);">Ik wil het proberen</a>
+                <button class="carrot-button">V</button> <!-- Carrot button -->
+            </div>
+            <div class="card-content">
+                <p class="card-text mb-4">Probeer de eerste twee weken voor maar €12,50- Je zit nergens aan vast!</p>
+                <ul class="checklist">
+                    <li>Leer voor jezelf opkomen, of juist meer rust te vinden.</li>
+                    <li>Ontdek verborgen talenten en bouw zelfvertrouwen op</li>
+                    <li>Leer valbreken, ontwijken, en balans</li>
+                    <li>Leer de rust, respect, kracht en discipline van Martial Arts</li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
+
+<script>
+    function toggleCard(card) {
+        card.classList.toggle('active');
+    }
+</script>
