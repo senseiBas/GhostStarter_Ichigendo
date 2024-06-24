@@ -34,6 +34,22 @@
     height: 100%;
 }
 
+.kg-card.kg-image-card {
+    display: block; /* Ensures the figure acts as a block-level container */
+    text-align: center; /* Centers the content (useful for the caption) */
+}
+
+.kg-card.kg-image-card img {
+    width: 100%; /* Ensures the image is responsive and fits the width of its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Ensures the image is a block-level element, allowing the caption to appear directly below */
+}
+
+.kg-card.kg-image-card figcaption {
+    margin-top: 0.5rem; /* Adds space between the image and the caption */
+    display: block; /* Ensures the caption is treated as a block-level element */
+}
+
 .kg-gallery-row:not(:first-of-type) {
     margin: var(--gap) 0 0;
 }
