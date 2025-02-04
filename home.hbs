@@ -1,5 +1,4 @@
-{{!< default}} 
-<main id="main">
+{{!< default}} <main id="main">
     {{!-- hero section --}}
     <section id="header" class="d-flex flex-column align-items-start align-items-md-center">
         <div class="header-text container-xl">
@@ -61,8 +60,16 @@
     {{!-- offer cards - lestijden.. - maps image on mobile --}}
 
     <section id="practical">
-        <div id="offer">
+        {{!-- <div id="offer">
             {{>offer}}
+        </div> --}}
+        <div style="height: 40vmin;min-height: 360px">
+            <script src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js"
+                data-background-color="#ffffff" data-text-color="#000000" data-button-color="#289b68"
+                data-button-text-color="#FFFFFF" data-title="Ichigendo"
+                data-description="krijgskunst en zelfontwikkeling voor mensen die op zoek zijn naar meer diepgang, zelfvertrouwen en mentale veerkracht"
+                data-icon="https://www.ichigendo.nl/content/images/size/w192h192/size/w256h256/2024/03/Favicon.png"
+                data-site="https://www.ichigendo.nl/" data-locale="nl" async></script>
         </div>
         <div class="mt-5">
             {{>tabs}}
@@ -98,4 +105,4 @@
             </div>
         </div>
     </section>
-</main>
+    </main>
